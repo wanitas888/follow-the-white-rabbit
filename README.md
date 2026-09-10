@@ -17,6 +17,7 @@ npx --yes serve .
 1. Create a new GitHub repository (public).
 2. Upload every file in this folder to the repo root.
    - `index.html`
+   - `privacy.html`
    - `styles.css`
    - `script.js`
    - `favicon.svg`

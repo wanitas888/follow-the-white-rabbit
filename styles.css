@@ -381,8 +381,16 @@ body.inside .wash {
   body { cursor: auto; }
   .cursor-glow { display: none; }
   .top, .floor { padding: 18px 18px; letter-spacing: 0.12em; }
-  .credit, .floor span:last-child { display: none; }
+  .credit, .copy { display: none; }
   .rabbit-btn { cursor: pointer; }
+  .policy-hero .kicker {
+    letter-spacing: 0.16em;
+    font-size: 10px;
+  }
+  .policy-block {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
 }
 
 @media (max-height: 760px) {
@@ -391,6 +399,192 @@ body.inside .wash {
   .rabbit { width: min(132px, 38vw); }
   .rabbit-btn { margin-top: 16px; }
   .kicker { margin-top: 14px; }
+}
+
+body.doc {
+  overflow: auto;
+  cursor: auto;
+}
+
+body.doc .top {
+  background: linear-gradient(180deg, #f7f3ed 0%, rgba(243, 239, 232, 0.92) 55%, rgba(243, 239, 232, 0));
+}
+
+.policy {
+  position: relative;
+  z-index: 4;
+  width: min(780px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 128px 0 120px;
+}
+
+.policy-hero {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.policy-hero h1 {
+  margin-top: 10px;
+}
+
+.policy-lead {
+  margin-top: 18px;
+  font-family: "Sarabun", "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: clamp(18px, 2.4vw, 22px);
+  color: #5a544c;
+}
+
+.lang-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.lang-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid #c9c0b3;
+  padding-bottom: 3px;
+}
+
+.lang-nav a:hover,
+.lang-nav a:focus-visible {
+  color: var(--sage);
+  outline: none;
+}
+
+.lang-nav span {
+  color: var(--sage);
+}
+
+.back-meadow {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--mute);
+  text-decoration: none;
+}
+
+.back-meadow:hover,
+.back-meadow:focus-visible {
+  color: var(--ink);
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.policy-block {
+  scroll-margin-top: 108px;
+  background: rgba(255, 253, 248, 0.48);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(28px, 5vw, 56px);
+  margin-bottom: 36px;
+}
+
+.policy-lang {
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 12px;
+}
+
+.policy-block h2 {
+  font-family: "Cormorant Garamond", "Sarabun", Georgia, serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 36px;
+}
+
+.policy-block[lang="th"] h2,
+.policy-block[lang="th"] h3,
+.policy-block[lang="th"] p:not(.num):not(.policy-lang) {
+  font-family: "Sarabun", "Outfit", sans-serif;
+}
+
+.policy-block[lang="th"] h2 {
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.policy-block section + section {
+  margin-top: 40px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.policy-block .num {
+  font-size: 11px;
+  letter-spacing: 0.36em;
+  color: var(--sage);
+  margin-bottom: 8px;
+}
+
+.policy-block h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.policy-block[lang="th"] h3 {
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.policy-block p:not(.num):not(.policy-lang) {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.85;
+  color: #5a544c;
+}
+
+.policy-block[lang="th"] p:not(.num):not(.policy-lang) {
+  font-weight: 400;
+  line-height: 1.95;
+}
+
+.policy-block p + p:not(.num):not(.policy-lang) {
+  margin-top: 16px;
+}
+
+.policy-floor {
+  position: relative;
+  margin-top: 8px;
+}
+
+.policy-floor a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #c9c0b3;
+  padding-bottom: 2px;
+}
+
+.floor a.policy-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.floor a.policy-link:hover,
+.floor a.policy-link:focus-visible {
+  border-bottom-color: #c9c0b3;
+  outline: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
