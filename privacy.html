@@ -10,7 +10,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <style>
+    body.doc {
+      overflow: auto !important;
+      height: auto !important;
+      cursor: auto !important;
+    }
+    body.doc .wash,
+    body.doc .grain {
+      z-index: -1 !important;
+    }
+    .policy {
+      position: relative;
+      z-index: 1;
+      width: min(780px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 128px 0 120px;
+      color: #2a2724;
+    }
+  </style>
 </head>
 <body class="doc">
   <div class="grain" aria-hidden="true"></div>

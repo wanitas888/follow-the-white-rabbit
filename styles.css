@@ -402,8 +402,15 @@ body.inside .wash {
 }
 
 body.doc {
-  overflow: auto;
+  overflow: auto !important;
+  height: auto;
+  min-height: 100%;
   cursor: auto;
+}
+
+body.doc .wash,
+body.doc .grain {
+  z-index: -1;
 }
 
 body.doc .top {
@@ -412,7 +419,7 @@ body.doc .top {
 
 .policy {
   position: relative;
-  z-index: 4;
+  z-index: 1;
   width: min(780px, calc(100% - 40px));
   margin: 0 auto;
   padding: 128px 0 120px;
