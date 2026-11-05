@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -11,17 +10,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
   <style>
-    /* สไตล์พื้นฐานป้องกันหน้าขาว */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body.doc {
-      background-color: #f3efe8;
-      color: #2a2724;
-      font-family: 'Sarabun', 'Outfit', sans-serif;
       overflow: auto !important;
       height: auto !important;
       cursor: auto !important;
-      line-height: 1.7;
+    }
+    body.doc .wash,
+    body.doc .grain {
+      z-index: -1 !important;
     }
     .policy {
       position: relative;
@@ -29,9 +27,55 @@
       width: min(780px, calc(100% - 40px));
       margin: 0 auto;
       padding: 128px 0 120px;
+      color: #2a2724;
     }
-    .top {
-      position: absolute;
-      top: 24px;
-      left: 40px;
-      right:
+  </style>
+</head>
+<body class="doc">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wash" aria-hidden="true"></div>
+
+  <header class="top">
+    <p class="mark">
+      <span class="dot"></span>
+      <span>03 / terms</span>
+    </p>
+    <p class="credit">GitHub Pages <em>×</em> w minimal soft inc.</p>
+  </header>
+
+  <main class="policy">
+    <header class="policy-hero">
+      <p class="kicker">rules of the road</p>
+      <h1>
+        <span class="line quiet">terms and conditions</span>
+        <span class="line loud">terms of service</span>
+      </h1>
+      <p class="policy-lead">ข้อกำหนดในการให้บริการ</p>
+      <nav class="lang-nav" aria-label="Language">
+        <a href="#th">ไทย</a>
+        <span aria-hidden="true">·</span>
+        <a href="#en">English</a>
+      </nav>
+      <a class="back-meadow" href="./">return to the meadow</a>
+    </header>
+
+    <article id="th" class="policy-block" lang="th">
+      <p class="policy-lang">ภาษาไทย</p>
+      <h2>ข้อกำหนดในการให้บริการ</h2>
+
+      <section>
+        <p class="num">01</p>
+        <h3>การยอมรับข้อกำหนด</h3>
+        <p>การเข้าถึงและการใช้งานเว็บไซต์หรือแอปพลิเคชันนี้ ถือว่าคุณยอมรับและตกลงที่จะปฏิบัติตามข้อกำหนดและเงื่อนไขการให้บริการฉบับนี้ทุกประการ หากคุณไม่ยินยอมพร้อมใจที่จะปฏิบัติตามข้อกำหนดเหล่านี้ กรุณางดเว้นการเข้าใช้งานบริการของเรา</p>
+      </section>
+
+      <section>
+        <p class="num">02</p>
+        <h3>การใช้งานบริการ</h3>
+        <p>คุณตกลงที่จะใช้บริการนี้เพื่อวัตถุประสงค์ที่ถูกกฎหมายและภายใต้ขอบเขตที่ยอมรับได้เท่านั้น ห้ามมิให้กระทำการใดๆ ที่อาจสร้างความเสียหาย ขัดขวาง หรือรบกวนการทำงานของระบบ เซิร์ฟเวอร์ หรือเครือข่ายที่เชื่อมต่อกับบริการของเรา รวมถึงห้ามพยายามเข้าถึงระบบโดยไม่ได้รับอนุญาต</p>
+      </section>
+
+      <section>
+        <p class="num">03</p>
+        <h3>ทรัพย์สินทางปัญญา</h3>
+        <p>เนื้อหา โค้ด กราฟิก โลโก้ และองค์ประกอบทั้งหมดภายในบริการนี้ถือเป็นทรัพย์สินทางปัญญาของเราหรือผู้ให้อذنสิทธิ์ ห้ามมิให้คัดลอก ดัดแปลง แจกจ่าย หรือนำไปใช้ในเชิงพาณิชย์โดยไม่ได้รับอนุญาตเป็นลายลักษณ์อ
