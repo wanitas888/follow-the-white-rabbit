@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
@@ -10,16 +11,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
   <style>
+    /* สไตล์พื้นฐานป้องกันหน้าขาว */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body.doc {
+      background-color: #f3efe8;
+      color: #2a2724;
+      font-family: 'Sarabun', 'Outfit', sans-serif;
       overflow: auto !important;
       height: auto !important;
       cursor: auto !important;
-    }
-    body.doc .wash,
-    body.doc .grain {
-      z-index: -1 !important;
+      line-height: 1.7;
     }
     .policy {
       position: relative;
@@ -27,17 +29,9 @@
       width: min(780px, calc(100% - 40px));
       margin: 0 auto;
       padding: 128px 0 120px;
-      color: #2a2724;
     }
-  </style>
-</head>
-<body class="doc">
-  <div class="grain" aria-hidden="true"></div>
-  <div class="wash" aria-hidden="true"></div>
-
-  <header class="top">
-    <p class="mark">
-      <span class="dot"></span>
-      <span>03 / terms</span>
-    </p>
-    <p class="credit">GitHub Pages <em>×</em> w minimal soft inc.</p>
+    .top {
+      position: absolute;
+      top: 24px;
+      left: 40px;
+      right:
