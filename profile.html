@@ -1,1272 +1,604 @@
 <!DOCTYPE html>
-<html lang="th" class="scroll-smooth">
+<html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>W Minimal soft | Developer Profile & App Portfolio</title>
-  <meta name="description" content="พอร์ตโฟลิโอแนะนำผลงานแอปพลิเคชัน Android โดย W Minimal soft (GibzillaStudio) บน Google Play Store — แอปพลิเคชันสไตล์มินิมอล ใช้งานง่าย ด้านการศึกษา เครื่องมือ และสุขภาพ" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f3efe8" />
+  <meta name="description" content="Our Profile — แนะนำผลงานแอปพลิเคชัน Android โดย W Minimal soft (GibzillaStudio) บน Google Play Store" />
+  <title>Our Profile · W Minimal soft</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
   <style>
-    :root {
-      --bg-primary: #faf9f6;
-      --bg-secondary: #ffffff;
-      --bg-accent: #f1efe9;
-      --text-primary: #1e242b;
-      --text-secondary: #5a6572;
-      --text-muted: #88939e;
-      --brand-primary: #2d6a4f;
-      --brand-secondary: #40916c;
-      --brand-light: #e8f5e9;
-      --border-color: #e6e4dd;
-      --card-shadow: 0 10px 30px -10px rgba(30, 36, 43, 0.07);
-      --card-hover-shadow: 0 20px 40px -12px rgba(45, 106, 79, 0.14);
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --radius-sm: 10px;
+    body.doc {
+      overflow: auto !important;
+      height: auto !important;
+      cursor: auto !important;
     }
-
-    [data-theme="dark"] {
-      --bg-primary: #121619;
-      --bg-secondary: #1b2126;
-      --bg-accent: #242c33;
-      --text-primary: #f1f5f9;
-      --text-secondary: #94a3b8;
-      --text-muted: #64748b;
-      --brand-primary: #52b788;
-      --brand-secondary: #74c69d;
-      --brand-light: rgba(82, 183, 136, 0.15);
-      --border-color: #2b353e;
-      --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
-      --card-hover-shadow: 0 20px 40px -12px rgba(82, 183, 136, 0.18);
+    body.doc .wash,
+    body.doc .grain {
+      z-index: -1 !important;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Kanit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.65;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    /* Header & Navigation */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      background: color-mix(in srgb, var(--bg-primary) 85%, transparent);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .container {
-      max-width: 1140px;
+    .profile-wrap {
+      position: relative;
+      z-index: 1;
+      width: min(980px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 128px 0 100px;
+      color: var(--ink);
     }
 
-    .nav-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--text-primary);
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
-
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-      box-shadow: 0 4px 12px rgba(45, 106, 79, 0.25);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      font-weight: 400;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--brand-primary);
-    }
-
-    .theme-btn {
-      background: var(--bg-accent);
-      border: 1px solid var(--border-color);
-      color: var(--text-primary);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-    }
-
-    .theme-btn:hover {
-      border-color: var(--brand-primary);
-      transform: translateY(-1px);
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 64px 0 48px;
+    /* Intro / Studio Card */
+    .studio-intro {
+      background: rgba(255, 253, 248, 0.52);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: clamp(28px, 4.5vw, 48px);
+      margin-bottom: 44px;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
       align-items: center;
     }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      background: var(--brand-light);
-      color: var(--brand-primary);
-      border-radius: 999px;
-      font-size: 0.85rem;
+    .studio-text .num {
+      font-size: 11px;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 10px;
+    }
+    .studio-text h2 {
+      font-family: "Cormorant Garamond", "Sarabun", Georgia, serif;
+      font-size: clamp(26px, 4vw, 38px);
       font-weight: 500;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.1rem, 4vw, 3.1rem);
       line-height: 1.2;
-      font-weight: 600;
       margin-bottom: 16px;
-      letter-spacing: -0.02em;
+      color: var(--ink);
     }
-
-    .hero h1 span {
-      color: var(--brand-primary);
+    .studio-text p {
+      font-family: "Sarabun", "Outfit", sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+      color: #5a544c;
+      margin-bottom: 24px;
     }
-
-    .hero p {
-      font-size: 1.08rem;
-      color: var(--text-secondary);
-      margin-bottom: 28px;
-      max-width: 560px;
-      font-weight: 300;
-    }
-
-    .hero-buttons {
+    .studio-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 36px;
+      gap: 12px;
+      align-items: center;
     }
-
-    .btn-primary {
+    .btn-paper {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--brand-primary);
-      color: #ffffff;
-      padding: 13px 24px;
-      border-radius: var(--radius-md);
+      background: var(--ink);
+      color: var(--rabbit);
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.98rem;
-      box-shadow: 0 8px 20px -6px rgba(45, 106, 79, 0.45);
-      transition: all 0.25s ease;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      padding: 14px 24px;
+      border-radius: 999px;
+      transition: transform 0.3s var(--ease), background 0.3s ease;
     }
-
-    .btn-primary:hover {
-      background: var(--brand-secondary);
+    .btn-paper:hover {
+      background: #433e39;
       transform: translateY(-2px);
     }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--bg-secondary);
-      color: var(--text-primary);
-      padding: 13px 24px;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-color);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.98rem;
-      transition: all 0.25s ease;
+    .studio-art {
+      background: rgba(243, 239, 232, 0.7);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
     }
-
-    .btn-secondary:hover {
-      border-color: var(--brand-primary);
-      color: var(--brand-primary);
-      transform: translateY(-2px);
-    }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .stat-item strong {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .stat-item span {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
-
-    /* Hero Illustration Card */
-    .hero-visual {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: var(--card-shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-visual svg {
+    .studio-art svg {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    /* Filter & Search Section */
-    .portfolio-section {
-      padding: 48px 0 80px;
-    }
-
-    .section-header {
-      text-align: center;
+    /* Filter Navigation */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
       margin-bottom: 36px;
     }
-
-    .section-header h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .section-header p {
-      color: var(--text-secondary);
-      font-weight: 300;
-    }
-
-    .controls-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .filter-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tab-btn {
-      padding: 9px 18px;
+    .filter-pill {
+      background: rgba(255, 253, 248, 0.45);
+      border: 1px solid var(--line);
+      color: var(--mute);
+      font-family: "Outfit", "Sarabun", sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 10px 20px;
       border-radius: 999px;
-      border: 1px solid var(--border-color);
-      background: var(--bg-secondary);
-      color: var(--text-secondary);
-      font-family: inherit;
-      font-size: 0.92rem;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
+    }
+    .filter-pill:hover {
+      color: var(--ink);
+      border-color: #c9c0b3;
+      background: rgba(255, 253, 248, 0.8);
+    }
+    .filter-pill.active {
+      background: var(--ink);
+      color: var(--rabbit);
+      border-color: var(--ink);
     }
 
-    .tab-btn:hover {
-      border-color: var(--brand-primary);
-      color: var(--brand-primary);
-    }
-
-    .tab-btn.active {
-      background: var(--brand-primary);
-      color: #ffffff;
-      border-color: var(--brand-primary);
-    }
-
-    .search-box {
-      position: relative;
-      min-width: 260px;
-      flex: 1;
-      max-width: 340px;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 10px 16px 10px 40px;
-      border-radius: 999px;
-      border: 1px solid var(--border-color);
-      background: var(--bg-secondary);
-      color: var(--text-primary);
-      font-family: inherit;
-      font-size: 0.92rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .search-box input:focus {
-      border-color: var(--brand-primary);
-    }
-
-    .search-box svg {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
-      width: 18px;
-      height: 18px;
-    }
-
-    /* App Grid & Cards */
-    .app-grid {
+    /* App Cards Grid */
+    .catalog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+      gap: 24px;
+      margin-bottom: 56px;
     }
-
     .app-card {
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--card-shadow);
-      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      background: rgba(255, 253, 248, 0.52);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
+      transition: transform 0.35s var(--ease), background 0.35s ease, border-color 0.35s ease;
     }
-
     .app-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--card-hover-shadow);
-      border-color: color-mix(in srgb, var(--brand-primary) 45%, var(--border-color));
+      transform: translateY(-5px);
+      background: rgba(255, 253, 248, 0.82);
+      border-color: #c9c0b3;
     }
-
-    .card-banner {
-      height: 170px;
-      position: relative;
+    .app-visual {
+      height: 148px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(247, 243, 237, 0.9), rgba(231, 224, 213, 0.55));
+      border: 1px solid rgba(42, 39, 36, 0.07);
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 16px;
+      margin-bottom: 20px;
+      position: relative;
       overflow: hidden;
-      padding: 20px;
     }
-
-    .card-banner svg.banner-illustration {
+    .app-visual svg {
       width: 100%;
       height: 100%;
-      max-height: 135px;
-      object-fit: contain;
-      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
-      transition: transform 0.35s ease;
+      max-height: 118px;
+      transition: transform 0.45s var(--ease);
     }
-
-    .app-card:hover .card-banner svg.banner-illustration {
-      transform: scale(1.05);
+    .app-card:hover .app-visual svg {
+      transform: scale(1.04);
     }
-
-    .category-pill {
+    .app-tag-top {
       position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(255, 255, 255, 0.88);
-      color: #1e242b;
-      padding: 4px 12px;
+      top: 12px;
+      right: 12px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mute);
+      background: rgba(255, 253, 248, 0.85);
+      border: 1px solid var(--line);
+      padding: 4px 10px;
       border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      backdrop-filter: blur(4px);
     }
-
-    .card-body {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
+    .app-num {
+      font-size: 11px;
+      letter-spacing: 0.34em;
+      color: var(--sage);
+      margin-bottom: 6px;
     }
-
-    .app-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 12px;
-    }
-
-    .app-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .app-title-group h3 {
-      font-size: 1.15rem;
+    .app-card h3 {
+      font-family: "Cormorant Garamond", "Sarabun", Georgia, serif;
+      font-size: 25px;
       font-weight: 600;
-      line-height: 1.3;
-      margin-bottom: 3px;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 4px;
     }
-
-    .app-title-group .subtitle {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      font-family: 'Inter', sans-serif;
+    .app-sub {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-bottom: 14px;
     }
-
     .app-desc {
-      font-size: 0.93rem;
-      color: var(--text-secondary);
-      font-weight: 300;
-      margin-bottom: 16px;
+      font-family: "Sarabun", "Outfit", sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #5a544c;
       flex: 1;
+      margin-bottom: 18px;
     }
-
-    .feature-tags {
+    .chip-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-bottom: 18px;
     }
-
-    .feature-tag {
-      font-size: 0.76rem;
+    .chip {
+      font-family: "Sarabun", "Outfit", sans-serif;
+      font-size: 12px;
+      color: #5a544c;
+      background: rgba(231, 224, 213, 0.55);
       padding: 3px 10px;
-      border-radius: 6px;
-      background: var(--bg-accent);
-      color: var(--text-secondary);
+      border-radius: 999px;
     }
-
-    .card-footer {
+    .app-link {
       padding-top: 14px;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--line);
       display: flex;
-      align-items: center;
       justify-content: space-between;
-    }
-
-    .platform-label {
-      display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    .play-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--brand-primary);
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ink);
       text-decoration: none;
-      transition: gap 0.2s ease;
+    }
+    .app-link span {
+      color: var(--sage);
+      transition: transform 0.25s ease;
+    }
+    .app-link:hover span {
+      transform: translateX(4px);
     }
 
-    .play-link:hover {
-      gap: 10px;
-    }
-
-    /* Philosophy / About Section */
-    .about-section {
-      padding: 64px 0;
-      background: var(--bg-secondary);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 32px;
-    }
-
-    .pillar-card {
-      padding: 24px;
-      border-radius: var(--radius-md);
-      background: var(--bg-primary);
-      border: 1px solid var(--border-color);
-    }
-
-    .pillar-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: var(--brand-light);
-      color: var(--brand-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
-    }
-
-    .pillar-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .pillar-card p {
-      font-size: 0.92rem;
-      color: var(--text-secondary);
-      font-weight: 300;
-    }
-
-    /* Footer */
-    footer {
-      padding: 48px 0;
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 0.92rem;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 16px 0 24px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--brand-primary);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-
-    .empty-state {
-      display: none;
-      text-align: center;
-      padding: 48px 20px;
-      color: var(--text-secondary);
-    }
-
-    @media (max-width: 860px) {
-      .hero {
+    @media (max-width: 760px) {
+      .studio-intro {
         grid-template-columns: 1fr;
-        padding: 40px 0 32px;
-        gap: 32px;
+        padding: 24px 20px;
       }
-      .nav-links {
-        display: none;
-      }
-      .controls-bar {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .search-box {
-        max-width: 100%;
+      .profile-wrap {
+        padding-top: 104px;
       }
     }
   </style>
 </head>
-<body>
+<body class="doc">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wash" aria-hidden="true"></div>
 
-  <!-- Navigation Header -->
-  <header>
-    <div class="container nav-bar">
-      <a href="#" class="brand">
-        <div class="brand-logo">W</div>
-        <div>
-          <span>W Minimal soft</span>
-        </div>
-      </a>
-      <div class="nav-actions">
-        <ul class="nav-links">
-          <li><a href="#apps">ผลงานแอปพลิเคชัน</a></li>
-          <li><a href="#philosophy">แนวคิดการพัฒนา</a></li>
-          <li><a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">Google Play</a></li>
-        </ul>
-        <button class="theme-btn" id="themeToggle" aria-label="สลับโหมดสีมืด/สว่าง" title="สลับโหมดมืด/สว่าง">
-          <svg id="sunIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <svg id="moonIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
+  <header class="top">
+    <p class="mark">
+      <span class="dot"></span>
+      <span>03 / our profile</span>
+    </p>
+    <p class="credit">GitHub Pages <em>×</em> w minimal soft inc.</p>
   </header>
 
-  <!-- Hero Section -->
-  <main class="container">
-    <section class="hero">
-      <div>
-        <div class="badge">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-          Android Developer Portfolio
-        </div>
-        <h1>สร้างสรรค์แอปพลิเคชัน <span>Minimal &amp; Useful</span> เพื่อชีวิตประจำวัน</h1>
+  <main class="profile-wrap">
+    <!-- Hero Header matching privacy.html & index.html -->
+    <header class="policy-hero">
+      <p class="kicker">crafted quietly by GibzillaStudio</p>
+      <h1>
+        <span class="line quiet">small tools, soft paper</span>
+        <span class="line loud">Our Profile</span>
+      </h1>
+      <p class="policy-lead">W Minimal soft · แนะนำผลงานแอปพลิเคชันบน Google Play</p>
+      <a class="back-meadow" href="./">&larr; return to the meadow</a>
+    </header>
+
+    <!-- Studio Introduction Card -->
+    <section class="studio-intro" aria-label="About W Minimal soft">
+      <div class="studio-text">
+        <p class="num">ABOUT THE STUDIO</p>
+        <h2>W Minimal soft · GibzillaStudio</h2>
         <p>
-          สวัสดีค่ะ! ยินดีต้อนรับสู่หน้าโปรไฟล์ของ <strong>W Minimal soft</strong> (GibzillaStudio) นักพัฒนาแอปพลิเคชัน Android ที่มุ่งเน้นความเรียบง่าย ขนาดเล็ก ทำงานรวดเร็ว รองรับการใช้งานออฟไลน์ ทั้งด้านการศึกษา เครื่องมือจัดการไฟล์ และสุขภาพ
+          เราพัฒนาแอปพลิเคชัน Android ภายใต้แนวคิด <strong>Soft &amp; Minimal</strong> ที่เน้นความเรียบง่าย สบายตา ขนาดไฟล์กะทัดรัด และทำงานได้รวดเร็วแม้ไม่มีอินเทอร์เน็ต (Offline-First) ครอบคลุมทั้งด้านการศึกษาและเตรียมสอบ เครื่องมือจัดการวิดีโอและรูปภาพ ไปจนถึงการดูแลสุขภาพในชีวิตประจำวัน
         </p>
-        <div class="hero-buttons">
-          <a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener" class="btn-primary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3.609 1.814L13.792 12 3.61 22.186a1.96 1.96 0 0 1-.61-1.424V3.238c0-.56.236-1.064.609-1.424zm11.62 11.62l2.794 2.794-11.09 6.404 8.296-9.198zm3.822-2.208l2.248 1.298c.934.54.934 1.422 0 1.962l-2.248 1.298-2.99-2.279 2.99-2.279zM6.933 1.368l11.09 6.404-2.794 2.794-8.296-9.198z"/>
-            </svg>
-            ดูแอปทั้งหมดบน Google Play
+        <div class="studio-actions">
+          <a class="btn-paper" href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">
+            Google Play Developer Page &rarr;
           </a>
-          <a href="#apps" class="btn-secondary">
-            สำรวจผลงานเด่น
-          </a>
-        </div>
-        <div class="stats-row">
-          <div class="stat-item">
-            <strong>8+</strong>
-            <span>แอปพลิเคชันที่เผยแพร่</span>
-          </div>
-          <div class="stat-item">
-            <strong>100%</strong>
-            <span>ดีไซน์สะอาด ใช้งานง่าย</span>
-          </div>
-          <div class="stat-item">
-            <strong>Offline-First</strong>
-            <span>เน้นทำงานได้แม้ไม่มีเน็ต</span>
-          </div>
         </div>
       </div>
 
-      <!-- Custom Hero SVG Illustration -->
-      <div class="hero-visual" aria-hidden="true">
-        <svg viewBox="0 0 480 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Soft Background Blobs -->
-          <circle cx="380" cy="80" r="70" fill="#D8F3DC" opacity="0.6"/>
-          <circle cx="90" cy="300" r="85" fill="#E8F5E9" opacity="0.7"/>
-          
-          <!-- Phone Mockup Frame -->
-          <rect x="145" y="25" width="190" height="330" rx="28" fill="#1E242B" />
-          <rect x="155" y="35" width="170" height="310" rx="20" fill="#FAF9F6" />
-          <!-- Phone Notch -->
-          <rect x="215" y="43" width="50" height="6" rx="3" fill="#CBD5E1" />
-
-          <!-- App Screen Header inside Phone -->
-          <rect x="170" y="65" width="140" height="60" rx="12" fill="#2D6A4F" />
-          <circle cx="195" cy="95" r="14" fill="#52B788" />
-          <text x="195" y="100" text-anchor="middle" fill="#FFF" font-family="Inter, sans-serif" font-weight="bold" font-size="13">W</text>
-          <rect x="218" y="83" width="76" height="10" rx="5" fill="#FFFFFF" />
-          <rect x="218" y="99" width="52" height="8" rx="4" fill="#95D5B2" />
-
-          <!-- Mini App Grid Inside Phone -->
-          <rect x="170" y="138" width="65" height="65" rx="14" fill="#E0F2FE" />
-          <path d="M195 162H210M195 172H215M195 182H205" stroke="#0284C7" stroke-width="3" stroke-linecap="round"/>
-
-          <rect x="245" y="138" width="65" height="65" rx="14" fill="#FEF3C7" />
-          <circle cx="277" cy="170" r="16" stroke="#D97706" stroke-width="3" />
-          <path d="M277 162V171L283 175" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
-
-          <rect x="170" y="213" width="65" height="65" rx="14" fill="#FCE7F3" />
-          <polygon points="196,235 196,257 214,246" fill="#DB2777" />
-
-          <rect x="245" y="213" width="65" height="65" rx="14" fill="#DCFCE7" />
-          <path d="M265 250L274 259L291 238" stroke="#16A34A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-
-          <!-- Bottom Bar inside Phone -->
-          <rect x="170" y="292" width="140" height="34" rx="10" fill="#E8F5E9" />
-          <rect x="195" y="305" width="90" height="8" rx="4" fill="#2D6A4F" />
-
-          <!-- Floating Card Left (Education) -->
-          <g transform="translate(25, 95)">
-            <rect width="135" height="72" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.06))"/>
-            <circle cx="32" cy="36" r="18" fill="#EFF6FF"/>
-            <path d="M24 34L32 29L40 34L32 39L24 34Z" fill="#2563EB"/>
-            <path d="M27 37V42C27 44 37 44 37 42V37" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
-            <rect x="58" y="24" width="60" height="9" rx="4.5" fill="#1E293B"/>
-            <rect x="58" y="39" width="44" height="7" rx="3.5" fill="#64748B"/>
-          </g>
-
-          <!-- Floating Card Right (Utilities & Battery/Video) -->
-          <g transform="translate(315, 205)">
-            <rect width="145" height="76" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.06))"/>
-            <circle cx="34" cy="38" r="18" fill="#ECFDF5"/>
-            <path d="M35 27L27 39H34L33 49L41 37H34L35 27Z" fill="#10B981"/>
-            <rect x="60" y="26" width="68" height="9" rx="4.5" fill="#1E293B"/>
-            <rect x="60" y="41" width="50" height="7" rx="3.5" fill="#10B981"/>
-          </g>
+      <!-- Soft-paper style illustration matching index.html -->
+      <div class="studio-art" aria-hidden="true">
+        <svg viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="245" cy="58" r="46" fill="#e8c9c0" opacity="0.35" />
+          <circle cx="75" cy="168" r="54" fill="#8fa393" opacity="0.22" />
+          <!-- Minimal Phone on Soft Paper -->
+          <rect x="95" y="16" width="130" height="188" rx="22" fill="#fffdf8" stroke="#d9d1c4" stroke-width="1.5" />
+          <rect x="142" y="26" width="36" height="4" rx="2" fill="#cfc6b8" />
+          <!-- Header block inside phone -->
+          <rect x="111" y="42" width="98" height="42" rx="10" fill="#f3efe8" stroke="#e4ddd2" />
+          <circle cx="129" cy="63" r="10" fill="#8fa393" />
+          <rect x="146" y="56" width="48" height="6" rx="3" fill="#2a2724" />
+          <rect x="146" y="66" width="32" height="5" rx="2.5" fill="#8a8278" />
+          <!-- 4 Minimal App Tiles -->
+          <rect x="111" y="94" width="45" height="42" rx="9" fill="#f7f3ec" stroke="#e4ddd2" />
+          <path d="M126 111h16M126 118h11" stroke="#8fa393" stroke-width="2" stroke-linecap="round" />
+          <rect x="164" y="94" width="45" height="42" rx="9" fill="#f7f3ec" stroke="#e4ddd2" />
+          <circle cx="186.5" cy="115" r="9" stroke="#d49b8e" stroke-width="2" />
+          <rect x="111" y="144" width="45" height="42" rx="9" fill="#f7f3ec" stroke="#e4ddd2" />
+          <polygon points="130,159 130,171 140,165" fill="#2a2724" />
+          <rect x="164" y="144" width="45" height="42" rx="9" fill="#f7f3ec" stroke="#e4ddd2" />
+          <path d="M179 165l5 5 10-11" stroke="#8fa393" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="apps" class="portfolio-section">
-      <div class="section-header">
-        <h2>ผลงานแอปพลิเคชัน (App Catalog)</h2>
-        <p>รวมแอปพลิเคชันจากคลังของ W Minimal soft บน Google Play Store พร้อมภาพประกอบแนวคิดแต่ละแอป</p>
-      </div>
+    <!-- Category Filter Pills -->
+    <div class="filter-bar" role="tablist" aria-label="App categories">
+      <button class="filter-pill active" data-filter="all">ทั้งหมด · All (8)</button>
+      <button class="filter-pill" data-filter="education">การศึกษา &amp; ภาษา (3)</button>
+      <button class="filter-pill" data-filter="utility">เครื่องมือ &amp; มีเดีย (4)</button>
+      <button class="filter-pill" data-filter="lifestyle">สุขภาพ &amp; โภชนาการ (1)</button>
+    </div>
 
-      <div class="controls-bar">
-        <div class="filter-tabs" role="tablist">
-          <button class="tab-btn active" data-filter="all">ทั้งหมด (8)</button>
-          <button class="tab-btn" data-filter="education">การศึกษา &amp; ภาษา (3)</button>
-          <button class="tab-btn" data-filter="utility">เครื่องมือ &amp; มัลติมีเดีย (4)</button>
-          <button class="tab-btn" data-filter="lifestyle">สุขภาพ &amp; โภชนาการ (1)</button>
-        </div>
+    <!-- App Catalog Grid (8 Apps) -->
+    <section class="catalog-grid" aria-label="Published Android applications">
 
-        <div class="search-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      <!-- 01. TOEIC Hero Part 5 & 6 Grammar -->
+      <article class="app-card" data-category="education">
+        <div class="app-visual">
+          <span class="app-tag-top">Education</span>
+          <svg viewBox="0 0 220 120" fill="none">
+            <rect x="35" y="16" width="150" height="88" rx="14" fill="#fffdf8" stroke="#d9d1c4" stroke-width="1.4"/>
+            <rect x="52" y="30" width="56" height="16" rx="8" fill="#8fa393"/>
+            <text x="80" y="41" text-anchor="middle" fill="#fffdf8" font-size="8.5" font-family="Outfit, sans-serif" letter-spacing="1">PART 5 · 6</text>
+            <rect x="52" y="55" width="104" height="7" rx="3.5" fill="#cfc6b8"/>
+            <rect x="52" y="68" width="78" height="7" rx="3.5" fill="#e7e0d5"/>
+            <circle cx="160" cy="78" r="14" fill="#f3efe8" stroke="#8fa393" stroke-width="1.4"/>
+            <path d="M154 78l4 4 8-9" stroke="#2a2724" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <input type="text" id="searchInput" placeholder="ค้นหาชื่อแอป หรือฟีเจอร์..." />
         </div>
-      </div>
+        <p class="app-num">01 / EXAM PREP</p>
+        <h3>TOEIC Hero Part 5 &amp; 6</h3>
+        <p class="app-sub">Bilingual Grammar &amp; Mock Test</p>
+        <p class="app-desc">
+          ฝึกทำข้อสอบและสรุปไวยากรณ์ TOEIC Reading Part 5 และ 6 พร้อมคำอธิบายเฉลยละเอียด 2 ภาษา (ไทย-อังกฤษ) มีโหมดจับเวลาจำลองการสอบและระบบจดจำข้อที่เคยทำผิด
+        </p>
+        <div class="chip-row">
+          <span class="chip">เฉลยไทย-อังกฤษ</span>
+          <span class="chip">Mock Test จับเวลา</span>
+          <span class="chip">Grammar Notes</span>
+        </div>
+        <a class="app-link" href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">
+          View on Google Play <span>&rarr;</span>
+        </a>
+      </article>
 
-      <div class="app-grid" id="appGrid">
+      <!-- 02. NFE Exam Prep / ติว กศน. -->
+      <article class="app-card" data-category="education">
+        <div class="app-visual">
+          <span class="app-tag-top">Education</span>
+          <svg viewBox="0 0 220 120" fill="none">
+            <rect x="38" y="16" width="144" height="88" rx="14" fill="#fffdf8" stroke="#d9d1c4" stroke-width="1.4"/>
+            <circle cx="74" cy="52" r="18" fill="#f3efe8" stroke="#e8c9c0" stroke-width="1.5"/>
+            <text x="74" y="56" text-anchor="middle" fill="#2a2724" font-size="11" font-family="Cormorant Garamond, serif" font-weight="600">1000</text>
+            <rect x="102" y="42" width="60" height="8" rx="4" fill="#2a2724"/>
+            <rect x="102" y="56" width="44" height="6" rx="3" fill="#cfc6b8"/>
+            <rect x="56" y="80" width="108" height="10" rx="5" fill="#f3efe8"/>
+            <rect x="56" y="80" width="76" height="10" rx="5" fill="#8fa393"/>
+          </svg>
+        </div>
+        <p class="app-num">02 / THAI NFE CURRICULUM</p>
+        <h3>ติว กศน. · NFE Exam Prep</h3>
+        <p class="app-sub">คลังข้อสอบ กศน. (สกร.) ประถม &amp; ม.ต้น</p>
+        <p class="app-desc">
+          เตรียมสอบสำหรับผู้เรียน กศน. (สกร.) ระดับประถมศึกษาและมัธยมศึกษาตอนต้น รวบรวมแนวข้อสอบกว่า 1,000 ข้อ ครบทุกวิชาหลัก พร้อมเฉลยเข้าใจง่ายและโหมดจำลองสอบจริง
+        </p>
+        <div class="chip-row">
+          <span class="chip">ข้อสอบ 1,000+ ข้อ</span>
+          <span class="chip">ครบทุกกลุ่มสาระ</span>
+          <span class="chip">เฉลยละเอียด</span>
+        </div>
+        <a class="app-link" href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">
+          View on Google Play <span>&rarr;</span>
+        </a>
+      </article>
 
-        <!-- 1. TOEIC Hero Part 5 & 6 Grammar -->
-        <article class="app-card" data-category="education">
-          <div class="card-banner" style="background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);">
-            <span class="category-pill">การศึกษา</span>
-            <svg class="banner-illustration" viewBox="0 0 240 130" fill="none">
-              <rect x="35" y="15" width="170" height="100" rx="14" fill="#FFFFFF" stroke="#BFDBFE" stroke-width="2"/>
-              <rect x="52" y="32" width="55" height="16" rx="8" fill="#2563EB"/>
-              <text x="79" y="43" text-anchor="middle" fill="#FFF" font-size="9" font-family="Inter, sans-serif" font-weight="bold">PART 5 &amp; 6</text>
-              <rect x="52" y="56" width="120" height="8" rx="4" fill="#93C5FD"/>
-              <rect x="52" y="70" width="95" height="8" rx="4" fill="#DBEAFE"/>
-              <circle cx="178" cy="88" r="16" fill="#DCFCE7"/>
-              <path d="M172 88L176 92L185 83" stroke="#16A34A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <div class="app-header">
-              <div class="app-icon" style="background: #2563eb; color: #fff;">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                </svg>
-              </div>
-              <div class="app-title-group">
-                <h3>TOEIC Hero Part 5 &amp; 6 Grammar</h3>
-                <span class="subtitle">Exam Prep &amp; Bilingual Explanation</span>
-              </div>
-            </div>
-            <p class="app-desc">
-              แอปฝึกทำข้อสอบและพิชิตไวยากรณ์ TOEIC Reading Part 5 และ 6 พร้อมคำอธิบายเฉลยละเอียด 2 ภาษา (ไทย-อังกฤษ) แยกหมวดหมู่ชัดเจน มีระบบจับเวลาจำลองการสอบและจดจำข้อที่เคยทำผิด
-            </p>
-            <div class="feature-tags">
-              <span class="feature-tag">เฉลยไทย-อังกฤษ</span>
-              <span class="feature-tag">Mock Test จับเวลา</span>
-              <span class="feature-tag">Grammar Notes</span>
-            </div>
-            <div class="card-footer">
-              <span class="platform-label">Android App</span>
-              <a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener" class="play-link">
-                ดูบน Google Play &rarr;
-              </a>
-            </div>
-          </div>
-        </article>
+      <!-- 03. English-Thai & Chinese Dictionary -->
+      <article class="app-card" data-category="education">
+        <div class="app-visual">
+          <span class="app-tag-top">Dictionary</span>
+          <svg viewBox="0 0 220 120" fill="none">
+            <rect x="36" y="20" width="66" height="80" rx="12" fill="#2a2724"/>
+            <text x="69" y="67" text-anchor="middle" fill="#fffdf8" font-size="22" font-family="Cormorant Garamond, serif">A–Z</text>
+            <rect x="118" y="20" width="66" height="80" rx="12" fill="#fffdf8" stroke="#d9d1c4" stroke-width="1.4"/>
+            <text x="151" y="67" text-anchor="middle" fill="#2a2724" font-size="20" font-family="Sarabun, sans-serif">ก–ฮ</text>
+            <circle cx="110" cy="60" r="13" fill="#f3efe8" stroke="#8fa393" stroke-width="1.4"/>
+            <path d="M105 60h10M111 56l4 4-4 4" stroke="#2a2724" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="app-num">03 / LANGUAGE TOOL</p>
+        <h3>Minimal Dictionary</h3>
+        <p class="app-sub">English–Thai &amp; Thai–Chinese</p>
+        <p class="app-desc">
+          พจนานุกรมภาษาอังกฤษ-ไทย และไทย-จีน ขนาดกะทัดรัด ค้นหาคำศัพท์ได้รวดเร็วทันใจ ใช้งานแบบออฟไลน์ได้ 100% โดยไม่ต้องเชื่อมต่ออินเทอร์เน็ต
+        </p>
+        <div class="chip-row">
+          <span class="chip">Offline 100%</span>
+          <span class="chip">ค้นหาคำศัพท์ไว</span>
+          <span class="chip">ขนาดไฟล์เล็ก</span>
+        </div>
+        <a class="app-link" href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">
+          View on Google Play <span>&rarr;</span>
+        </a>
+      </article>
 
-        <!-- 2. NFE Elementary / ติว กศน. ม.ต้น ข้อสอบ 1000 ข้อ -->
-        <article class="app-card" data-category="education">
-          <div class="card-banner" style="background: linear-gradient(135deg, #fef3c7 0%, #fffbeb 100%);">
-            <span class="category-pill">เตรียมสอบ</span>
-            <svg class="banner-illustration" viewBox="0 0 240 130" fill="none">
-              <rect x="45" y="15" width="150" height="100" rx="14" fill="#FFFFFF" stroke="#FDE68A" stroke-width="2"/>
-              <circle cx="80" cy="52" r="18" fill="#FEF3C7"/>
-              <text x="80" y="56" text-anchor="middle" fill="#D97706" font-size="11" font-family="Inter, sans-serif" font-weight="bold">1000</text>
-              <rect x="108" y="40" width="68" height="10" rx="5" fill="#D97706"/>
-              <rect x="108" y="56" width="50" height="8" rx="4" fill="#FCD34D"/>
-              <rect x="62" y="82" width="114" height="14" rx="7" fill="#FEF3C7"/>
-              <rect x="62" y="82" width="82" height="14" rx="7" fill="#F59E0B"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <div class="app-header">
-              <div class="app-icon" style="background: #d97706; color: #fff;">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                </svg>
-              </div>
-              <div class="app-title-group">
-                <h3>ติว กศน. / NFE Exam Prep</h3>
-                <span class="subtitle">คลังข้อสอบ กศน. (สกร.) ประถม &amp; ม.ต้น</span>
-              </div>
-            </div>
-            <p class="app-desc">
-              แอปเตรียมสอบสำหรับผู้เรียน กศน. (สกร.) ระดับประถมศึกษาและมัธยมศึกษาตอนต้น รวบรวมแนวข้อสอบกว่า 1,000 ข้อ ครบทุกกลุ่มสาระการเรียนรู้หลัก พร้อมเฉลยละเอียดและโหมดจำลองการสอบจริง
-            </p>
-            <div class="feature-tags">
-              <span class="feature-tag">ข้อสอบ 1,000+ ข้อ</span>
-              <span class="feature-tag">ครบทุกกลุ่มสาระ</span>
-              <span class="feature-tag">เฉลยเข้าใจง่าย</span>
-            </div>
-            <div class="card-footer">
-              <span class="platform-label">Android App</span>
-              <a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener" class="play-link">
-                ดูบน Google Play &rarr;
-              </a>
-            </div>
-          </div>
-        </article>
+      <!-- 04. Minimal Video Editor & VertiCrop -->
+      <article class="app-card" data-category="utility">
+        <div class="app-visual">
+          <span class="app-tag-top">Media Tool</span>
+          <svg viewBox="0 0 220 120" fill="none">
+            <rect x="40" y="34" width="38" height="52" rx="8" fill="#e8c9c0" opacity="0.45"/>
+            <rect x="142" y="34" width="38" height="52" rx="8" fill="#e8c9c0" opacity="0.45"/>
+            <rect x="81" y="12" width="58" height="96" rx="12" fill="#2a2724"/>
+            <rect x="86" y="18" width="48" height="84" rx="8" fill="#fffdf8"/>
+            <circle cx="110" cy="56" r="14" fill="#f3efe8" stroke="#d9d1c4"/>
+            <polygon points="107,50 107,62 117,56" fill="#2a2724"/>
+            <text x="110" y="90" text-anchor="middle" fill="#8a8278" font-size="8" font-family="Outfit, sans-serif" letter-spacing="1.5">9 : 16</text>
+          </svg>
+        </div>
+        <p class="app-num">04 / VIDEO UTILITY</p>
+        <h3>Minimal Video &amp; VertiCrop</h3>
+        <p class="app-sub">9:16 Vertical Video Editor</p>
+        <p class="app-desc">
+          เครื่องมือตัดต่อและแปลงวิดีโอแนวนอน 16:9 เป็นแนวตั้ง 9:16 สำหรับทำคอนเทนต์ Shorts, Reels และ TikTok รองรับการตัดคลิป รวมคลิป และส่งออกความละเอียด 1080p Full HD
+        </p>
+        <div class="chip-row">
+          <span class="chip">9:16 Vertical</span>
+          <span class="chip">1080p Full HD</span>
+          <span class="chip">ประมวลผลในเครื่อง</span>
+        </div>
+        <a class="app-link" href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">
+          View on Google Play <span>&rarr;</span>
+        </a>
+      </article>
 
-        <!-- 3. English-Thai & Thai-Chinese Dictionary -->
-        <article class="app-card" data-category="education">
-          <div class="card-banner" style="background: linear-gradient(135deg, #e0e7ff 0%, #eef2ff 100%);">
-            <span class="category-pill">พจนานุกรม</span>
-            <svg class="banner-illustration" viewBox="0 0 240 130" fill="none">
-              <rect x="40" y="22" width="75" height="86" rx="12" fill="#4F46E5"/>
-              <text x="77" y="72" text-anchor="middle" fill="#FFFFFF" font-size="24" font-family="Inter, sans-serif" font-weight="bold">A-Z</text>
-              <rect x="125" y="22" width="75" height="86" rx="12" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="2"/>
-              <text x="162" y="72" text-anchor="middle" fill="#4F46E5" font-size="24" font-family="Kanit, sans-serif" font-weight="bold">ก-ฮ</text>
-              <circle cx="120" cy="65" r="14" fill="#EEF2FF" stroke="#4F46E5" stroke-width="2"/>
-              <path d="M115 65H125M121 61L125 65L121 69" stroke="#4F46E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <div class="app-header">
-              <div class="app-icon" style="background: #4f46e5; color: #fff;">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 8l6 6"></path>
-                  <path d="M4 14l6-6 2-3"></path>
-                  <path d="M2 5h12"></path>
-                  <path d="M7 2h1"></path>
-                  <path d="M22 22l-5-10-5 10"></path>
-                  <path d="M14 18h6"></path>
-                </svg>
-              </div>
-              <div class="app-title-group">
-                <h3>English-Thai &amp; Chinese Dict</h3>
-                <span class="subtitle">app.minimal.thaiengdict</span>
-              </div>
-            </div>
-            <p class="app-desc">
-              พจนานุกรมภาษาอังกฤษ-ไทย และไทย-จีน ขนาดกะทัดรัด ค้นหาคำศัพท์ได้รวดเร็วทันใจ ใช้งานแบบออฟไลน์ได้โดยไม่ต้องต่ออินเทอร์เน็ต เหมาะสำหรับนักเรียน นักศึกษา และผู้ใช้งานทั่วไป
-            </p>
-            <div class="feature-tags">
-              <span class="feature-tag">Offline 100%</span>
-              <span class="feature-tag">ค้นหาคำศัพท์ไว</span>
-              <span class="feature-tag">น้ำหนักเบา</span>
-            </div>
-            <div class="card-footer">
-              <span class="platform-label">Android App</span>
-              <a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener" class="play-link">
-                ดูบน Google Play &rarr;
-              </a>
-            </div>
-          </div>
-        </article>
+      <!-- 05. Photo Compress KB -->
+      <article class="app-card" data-category="utility">
+        <div class="app-visual">
+          <span class="app-tag-top">Image Tool</span>
+          <svg viewBox="0 0 220 120" fill="none">
+            <rect x="34" y="20" width="64" height="80" rx="10" fill="#fffdf8" stroke="#d9d1c4" stroke-width="1.4"/>
+            <text x="66" y="56" text-anchor="middle" fill="#8a8278" font-size="11" font-family="Outfit, sans-serif">5.2 MB</text>
+            <text x="66" y="72" text-anchor="middle" fill="#cfc6b8" font-size="8" font-family="Outfit, sans-serif">ORIGINAL</text>
+            <path d="M104 60h12M112 56l4 4-4 4" stroke="#8fa393" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="122" y="28" width="64" height="64" rx="10" fill="#8fa393"/>
+            <text x="154" y="58" text-anchor="middle" fill="#fffdf8" font-size="11.5" font-family="Outfit, sans-serif" font-weight="500">&lt; 100 KB</text>
+            <text x="154" y="73" text-anchor="middle" fill="#f3efe8" font-size="7.5" font-family="Outfit, sans-serif" letter-spacing="1">EXACT SIZE</text>
+          </svg>
+        </div>
+        <p class="app-num">05 / IMAGE COMPRESSOR</p>
+        <h3>Photo Compress KB</h3>
+        <p class="app-sub">Target KB Size Optimizer</p>
+        <p class="app-desc">
+          บีบอัดและย่อขนาดไฟล์รูปภาพให้ได้ขนาดกิโลไบต์ (KB) ตามที่กำหนดอย่างแม่นยำ เหมาะสำหรับผู้ที่ต้องอัปโหลดรูปสมัครงาน สมัครสอบ หรือแนบเอกสารออนไลน์
+        </p>
+        <div class="chip-row">
+          <span class="chip">กำหนดขนาด KB เป๊ะ</span>
+          <span class="chip">ภาพยังคมชัด</span>
+          <span class="chip">ใช้งานง่าย</span>
+        </div>
+        <a class="app-link" href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">
+          View on Google Play <span>&rarr;</span>
+        </a>
+      </article>
 
-        <!-- 4. Minimal Video Editor / VideoVertiCrop -->
-        <article class="app-card" data-category="utility">
-          <div class="card-banner" style="background: linear-gradient(135deg, #fce7f3 0%, #fdf2f8 100%);">
-            <span class="category-pill">มัลติมีเดีย</span>
-            <svg class="banner-illustration" viewBox="0 0 240 130" fill="none">
-              <rect x="85" y="10" width="70" height="110" rx="12" fill="#1E293B"/>
-              <rect x="91" y="18" width="58" height="94" rx="8" fill="#DB2777"/>
-              <polygon points="114,55 114,75 130,65" fill="#FFFFFF"/>
-              <text x="120" y="102" text-anchor="middle" fill="#FCE7F3" font-size="9" font-family="Inter, sans-serif" font-weight="bold">9:16 HD</text>
-              <rect x="35" y="42" width="40" height="46" rx="8" fill="#FBCFE8" opacity="0.7"/>
-              <rect x="165" y="42" width="40" height="46" rx="8" fill="#FBCFE8" opacity="0.7"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <div class="app-header">
-              <div class="app-icon" style="background: #db2777; color: #fff;">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                </svg>
-              </div>
-              <div class="app-title-group">
-                <h3>Minimal Video Editor &amp; VertiCrop</h3>
-                <span class="subtitle">9:16 Vertical Video Tool</span>
-              </div>
-            </div>
-            <p class="app-desc">
-              เครื่องมือตัดต่อและแปลงวิดีโอแนวนอน 16:9 เป็นแนวตั้ง 9:16 สำหรับสายสร้างคอนเทนต์ Shorts, Reels และ TikTok รองรับการตัดคลิป เรียงลำดับแบบ Drag &amp; Drop และส่งออกไฟล์ 1080p Full HD
-            </p>
-            <div class="feature-tags">
-              <span class="feature-tag">9:16 Vertical</span>
-              <span class="feature-tag">1080p Export</span>
-              <span class="feature-tag">ประมวลผลในเครื่อง</span>
-            </div>
-            <div class="card-footer">
-              <span class="platform-label">Android App</span>
-              <a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener" class="play-link">
-                ดูบน Google Play &rarr;
-              </a>
-            </div>
-          </div>
-        </article>
+      <!-- 06. Battery Profiler Health & Care -->
+      <article class="app-card" data-category="utility">
+        <div class="app-visual">
+          <span class="app-tag-top">System</span>
+          <svg viewBox="0 0 220 120" fill="none">
+            <rect x="48" y="32" width="114" height="56" rx="12" fill="#fffdf8" stroke="#8fa393" stroke-width="2"/>
+            <rect x="164" y="48" width="7" height="24" rx="3.5" fill="#8fa393"/>
+            <rect x="56" y="40" width="78" height="40" rx="7" fill="#8fa393" opacity="0.85"/>
+            <path d="M106 46l-8 14h8l-2 14 10-16h-8l0-12z" fill="#fffdf8"/>
+          </svg>
+        </div>
+        <p class="app-num">06 / DEVICE TELEMETRY</p>
+        <h3>Battery Profiler Health</h3>
+        <p class="app-sub">Real-Time Voltage, mA &amp; Care</p>
+        <p class="app-desc">
+          ตรวจสอบสุขภาพแบตเตอรี่เชิงลึก แสดงแรงดันไฟฟ้า (Voltage) กระแสไฟไหลเข้า-ออก (mA) และอุณหภูมิเครื่องแบบเรียลไทม์ พร้อมคำแนะนำในการยืดอายุแบตเตอรี่
+        </p>
+        <div class="chip-row">
+          <span class="chip">วัดกระแสไฟ mA จริง</span>
+          <span class="chip">เช็กอุณหภูมิ</span>
+          <span class="chip">วิเคราะห์สุขภาพแบต</span>
+        </div>
+        <a class="app-link" href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">
+          View on Google Play <span>&rarr;</span>
+        </a>
+      </article>
 
-        <!-- 5. Photo Compress KB -->
-        <article class="app-card" data-category="utility">
-          <div class="card-banner" style="background: linear-gradient(135deg, #ccfbf1 0%, #f0fdfa 100%);">
-            <span class="category-pill">จัดการรูปภาพ</span>
-            <svg class="banner-illustration" viewBox="0 0 240 130" fill="none">
-              <rect x="38" y="22" width="72" height="86" rx="10" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="2"/>
-              <text x="74" y="62" text-anchor="middle" fill="#64748B" font-size="12" font-family="Inter, sans-serif" font-weight="bold">5.2 MB</text>
-              <text x="74" y="80" text-anchor="middle" fill="#94A3B8" font-size="9" font-family="Inter, sans-serif">RAW PHOTO</text>
-              <path d="M116 65H128M124 60L129 65L124 70" stroke="#0D9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="136" y="30" width="66" height="70" rx="10" fill="#0D9488"/>
-              <text x="169" y="64" text-anchor="middle" fill="#FFFFFF" font-size="13" font-family="Inter, sans-serif" font-weight="bold">&lt; 100 KB</text>
-              <text x="169" y="80" text-anchor="middle" fill="#CCFBF1" font-size="8" font-family="Inter, sans-serif">OPTIMIZED</text>
-            </svg>
-          </div>
-          <div class="card-body">
-            <div class="app-header">
-              <div class="app-icon" style="background: #0d9488; color: #fff;">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                  <polyline points="21 15 16 10 5 21"></polyline>
-                </svg>
-              </div>
-              <div class="app-title-group">
-                <h3>Photo Compress KB</h3>
-                <span class="subtitle">Exact File Size Image Compressor</span>
-              </div>
-            </div>
-            <p class="app-desc">
-              แอปบีบอัดและย่อขนาดไฟล์รูปภาพให้ได้ขนาดกิโลไบต์ (KB) ตามเป้าหมายอย่างแม่นยำ ตอบโจทย์ผู้ที่ต้องอัปโหลดรูปถ่ายสมัครงาน สมัครสอบ หรือส่งเอกสารราชการออนไลน์ที่จำกัดขนาดไฟล์
-            </p>
-            <div class="feature-tags">
-              <span class="feature-tag">กำหนดขนาด KB เป๊ะ</span>
-              <span class="feature-tag">ภาพยังคมชัด</span>
-              <span class="feature-tag">ทำเสร็จในคลิกเดียว</span>
-            </div>
-            <div class="card-footer">
-              <span class="platform-label">Android App</span>
-              <a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener" class="play-link">
-                ดูบน Google Play &rarr;
-              </a>
-            </div>
-          </div>
-        </article>
+      <!-- 07. Minimal Compass Logger -->
+      <article class="app-card" data-category="utility">
+        <div class="app-visual">
+          <span class="app-tag-top">Navigation</span>
+          <svg viewBox="0 0 220 120" fill="none">
+            <circle cx="110" cy="60" r="42" fill="#fffdf8" stroke="#d9d1c4" stroke-width="2"/>
+            <circle cx="110" cy="60" r="34" stroke="#e4ddd2" stroke-width="1.2" stroke-dasharray="3 3"/>
+            <polygon points="110,28 117,60 103,60" fill="#d49b8e"/>
+            <polygon points="110,92 117,60 103,60" fill="#8fa393"/>
+            <circle cx="110" cy="60" r="4" fill="#2a2724"/>
+          </svg>
+        </div>
+        <p class="app-num">07 / OUTDOOR LOGGER</p>
+        <h3>Minimal Compass Logger</h3>
+        <p class="app-sub">Digital Compass &amp; Offline GPS Log</p>
+        <p class="app-desc">
+          เข็มทิศดิจิทัลพร้อมระบบบันทึกพิกัด GPS ความสูงจากระดับน้ำทะเล และแนบรูปถ่ายสถานที่ จัดเก็บข้อมูลลงในเครื่องแบบออฟไลน์ เหมาะสำหรับสายเดินป่าและสำรวจ
+        </p>
+        <div class="chip-row">
+          <span class="chip">เข็มทิศ &amp; พิกัด GPS</span>
+          <span class="chip">แนบรูปถ่ายได้</span>
+          <span class="chip">Offline Storage</span>
+        </div>
+        <a class="app-link" href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">
+          View on Google Play <span>&rarr;</span>
+        </a>
+      </article>
 
-        <!-- 6. Battery Profiler Health & Care -->
-        <article class="app-card" data-category="utility">
-          <div class="card-banner" style="background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);">
-            <span class="category-pill">วิเคราะห์ระบบ</span>
-            <svg class="banner-illustration" viewBox="0 0 240 130" fill="none">
-              <rect x="55" y="34" width="120" height="62" rx="12" fill="#FFFFFF" stroke="#22C55E" stroke-width="3"/>
-              <rect x="177" y="52" width="8" height="26" rx="4" fill="#22C55E"/>
-              <rect x="63" y="42" width="84" height="46" rx="7" fill="#22C55E"/>
-              <path d="M115 50L105 65H114L112 80L124 63H115L115 50Z" fill="#FFFFFF"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <div class="app-header">
-              <div class="app-icon" style="background: #16a34a; color: #fff;">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="1" y="6" width="18" height="12" rx="2" ry="2"></rect>
-                  <line x1="23" y1="13" x2="23" y2="11"></line>
-                </svg>
-              </div>
-              <div class="app-title-group">
-                <h3>Battery Profiler Health &amp; Care</h3>
-                <span class="subtitle">Real-Time Battery Telemetry</span>
-              </div>
-            </div>
-            <p class="app-desc">
-              ตรวจสอบสุขภาพแบตเตอรี่เชิงลึก แสดงข้อมูลแรงดันไฟฟ้า (Voltage) กระแสไฟไหลเข้า-ออก (mA) อุณหภูมิเครื่องแบบเรียลไทม์ และการประเมินอายุการใช้งาน พร้อมคำแนะนำในการถนอมแบตเตอรี่
-            </p>
-            <div class="feature-tags">
-              <span class="feature-tag">Real-time mA &amp; Temp</span>
-              <span class="feature-tag">วิเคราะห์สุขภาพแบต</span>
-              <span class="feature-tag">แจ้งเตือนความร้อน</span>
-            </div>
-            <div class="card-footer">
-              <span class="platform-label">Android App</span>
-              <a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener" class="play-link">
-                ดูบน Google Play &rarr;
-              </a>
-            </div>
-          </div>
-        </article>
+      <!-- 08. Thaifood Calorie -->
+      <article class="app-card" data-category="lifestyle">
+        <div class="app-visual">
+          <span class="app-tag-top">Health</span>
+          <svg viewBox="0 0 220 120" fill="none">
+            <circle cx="84" cy="60" r="34" fill="#fffdf8" stroke="#d9d1c4" stroke-width="1.6"/>
+            <circle cx="84" cy="60" r="22" fill="#f3efe8" stroke="#e8c9c0" stroke-width="1.4"/>
+            <circle cx="84" cy="60" r="8" fill="#d49b8e" opacity="0.7"/>
+            <rect x="130" y="34" width="56" height="52" rx="10" fill="#fffdf8" stroke="#d9d1c4" stroke-width="1.4"/>
+            <text x="158" y="56" text-anchor="middle" fill="#2a2724" font-size="11" font-family="Cormorant Garamond, serif" font-weight="600">KCAL</text>
+            <rect x="140" y="64" width="36" height="5" rx="2.5" fill="#8fa393"/>
+            <rect x="140" y="73" width="24" height="5" rx="2.5" fill="#e8c9c0"/>
+          </svg>
+        </div>
+        <p class="app-num">08 / NUTRITION &amp; WELLNESS</p>
+        <h3>Thaifood Calorie</h3>
+        <p class="app-sub">แคลอรี่อาหารไทย &amp; คำนวณ BMI / TDEE</p>
+        <p class="app-desc">
+          ตารางแคลอรี่อาหารไทยยอดฮิต ค้นหาง่าย ช่วยวางแผนควบคุมน้ำหนัก พร้อมคำนวณค่าดัชนีมวลกาย (BMI), พลังงานที่ใช้ต่อวัน (BMR/TDEE) และตารางการเผาผลาญพลังงาน
+        </p>
+        <div class="chip-row">
+          <span class="chip">แคลอรี่อาหารไทย</span>
+          <span class="chip">คำนวณ BMI/TDEE</span>
+          <span class="chip">ตารางเผาผลาญ</span>
+        </div>
+        <a class="app-link" href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">
+          View on Google Play <span>&rarr;</span>
+        </a>
+      </article>
 
-        <!-- 7. Minimal Compass Logger -->
-        <article class="app-card" data-category="utility">
-          <div class="card-banner" style="background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);">
-            <span class="category-pill">นำทาง &amp; บันทึกพิกัด</span>
-            <svg class="banner-illustration" viewBox="0 0 240 130" fill="none">
-              <circle cx="120" cy="65" r="46" fill="#FFFFFF" stroke="#38BDF8" stroke-width="3"/>
-              <circle cx="120" cy="65" r="38" stroke="#BAE6FD" stroke-width="1.5" stroke-dasharray="4 4"/>
-              <polygon points="120,32 128,65 112,65" fill="#EF4444"/>
-              <polygon points="120,98 128,65 112,65" fill="#64748B"/>
-              <circle cx="120" cy="65" r="5" fill="#0F172A"/>
-              <text x="120" y="27" text-anchor="middle" fill="#0284C7" font-size="9" font-family="Inter, sans-serif" font-weight="bold">N</text>
-            </svg>
-          </div>
-          <div class="card-body">
-            <div class="app-header">
-              <div class="app-icon" style="background: #0284c7; color: #fff;">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-                </svg>
-              </div>
-              <div class="app-title-group">
-                <h3>Minimal Compass Logger</h3>
-                <span class="subtitle">Digital Compass &amp; Offline GPS Log</span>
-              </div>
-            </div>
-            <p class="app-desc">
-              เข็มทิศดิจิทัลความแม่นยำสูงพร้อมระบบบันทึกพิกัด GPS ความสูงจากระดับน้ำทะเล และแนบรูปถ่ายสถานที่ จัดเก็บข้อมูลลงฐานข้อมูลในเครื่องแบบออฟไลน์ เหมาะสำหรับสายเดินป่าและสำรวจพื้นที่
-            </p>
-            <div class="feature-tags">
-              <span class="feature-tag">เข็มทิศ &amp; พิกัด GPS</span>
-              <span class="feature-tag">บันทึกพร้อมรูปถ่าย</span>
-              <span class="feature-tag">Offline Storage</span>
-            </div>
-            <div class="card-footer">
-              <span class="platform-label">Android App</span>
-              <a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener" class="play-link">
-                ดูบน Google Play &rarr;
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 8. Thaifood Calorie -->
-        <article class="app-card" data-category="lifestyle">
-          <div class="card-banner" style="background: linear-gradient(135deg, #ffedd5 0%, #fff7ed 100%);">
-            <span class="category-pill">สุขภาพ &amp; โภชนาการ</span>
-            <svg class="banner-illustration" viewBox="0 0 240 130" fill="none">
-              <circle cx="95" cy="68" r="36" fill="#FFFFFF" stroke="#FB923C" stroke-width="2.5"/>
-              <circle cx="95" cy="68" r="24" fill="#FFEDD5"/>
-              <path d="M85 68C85 60 105 60 105 68C105 76 85 76 85 68Z" fill="#EA580C"/>
-              <rect x="142" y="38" width="60" height="58" rx="10" fill="#FFFFFF" stroke="#FED7AA" stroke-width="2"/>
-              <text x="172" y="62" text-anchor="middle" fill="#EA580C" font-size="12" font-family="Inter, sans-serif" font-weight="bold">KCAL</text>
-              <rect x="152" y="72" width="40" height="6" rx="3" fill="#FDBA74"/>
-              <rect x="152" y="82" width="28" height="6" rx="3" fill="#FED7AA"/>
-            </svg>
-          </div>
-          <div class="card-body">
-            <div class="app-header">
-              <div class="app-icon" style="background: #ea580c; color: #fff;">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                  <line x1="6" y1="1" x2="6" y2="4"></line>
-                  <line x1="10" y1="1" x2="10" y2="4"></line>
-                  <line x1="14" y1="1" x2="14" y2="4"></line>
-                </svg>
-              </div>
-              <div class="app-title-group">
-                <h3>Thaifood Calorie</h3>
-                <span class="subtitle">แคลอรี่อาหารไทย &amp; คำนวณ BMI/TDEE</span>
-              </div>
-            </div>
-            <p class="app-desc">
-              ตารางแคลอรี่อาหารไทยยอดฮิต ค้นหาง่าย ช่วยวางแผนควบคุมน้ำหนัก พร้อมเครื่องมือคำนวณค่าดัชนีมวลกาย (BMI), พลังงานที่ต้องใช้ต่อวัน (BMR/TDEE) และประเมินเวลาออกกำลังกายเผาผลาญ
-            </p>
-            <div class="feature-tags">
-              <span class="feature-tag">ข้อมูลอาหารไทย</span>
-              <span class="feature-tag">คำนวณ BMI/BMR/TDEE</span>
-              <span class="feature-tag">ตารางเผาผลาญ</span>
-            </div>
-            <div class="card-footer">
-              <span class="platform-label">Android App</span>
-              <a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener" class="play-link">
-                ดูบน Google Play &rarr;
-              </a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="empty-state" id="emptyState">
-        <p>ไม่พบแอปพลิเคชันที่ตรงกับคำค้นหา ลองเปลี่ยนคำค้นหรือเลือกหมวดหมู่ "ทั้งหมด" ดูนะคะ</p>
-      </div>
     </section>
   </main>
 
-  <!-- Philosophy / About Section -->
-  <section id="philosophy" class="about-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>แนวคิดการพัฒนาของ W Minimal soft</h2>
-        <p>ทำไมเราถึงยึดมั่นในความเรียบง่าย (Minimalism) ในทุกแอปพลิเคชันที่เราสร้าง</p>
-      </div>
-      <div class="about-grid">
-        <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
-          </div>
-          <h3>Lightweight &amp; Fast</h3>
-          <p>ขนาดไฟล์ติดตั้งกะทัดรัด ประหยัดพื้นที่เก็บข้อมูลในโทรศัพท์ เปิดใช้งานได้ทันทีโดยไม่หน่วงเครื่อง</p>
-        </div>
-        <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="3" y1="9" x2="21" y2="9"></line>
-              <line x1="9" y1="21" x2="9" y2="9"></line>
-            </svg>
-          </div>
-          <h3>Distraction-Free UI</h3>
-          <p>ออกแบบหน้าจอให้สะอาดตา เข้าใจง่ายตั้งแต่ครั้งแรกที่เปิดแอป ไม่ซับซ้อน โฟกัสที่ฟังก์ชันหลักอย่างแท้จริง</p>
-        </div>
-        <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <h3>Offline &amp; Privacy First</h3>
-          <p>ประมวลผลข้อมูลสำคัญบนอุปกรณ์ของผู้ใช้โดยตรง ใช้งานได้ทุกที่แม้ไม่มีสัญญาณอินเทอร์เน็ต</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <strong>W Minimal soft</strong> — Independent Android Developer (GibzillaStudio)
-      <div class="footer-links">
-        <a href="https://play.google.com/store/apps/developer?id=W+Minimal+soft" target="_blank" rel="noopener">Google Play Developer Page</a>
-        <a href="#apps">รายการแอปพลิเคชัน</a>
-        <a href="#philosophy">เกี่ยวกับเรา</a>
-      </div>
-      <p>&copy; <span id="year"></span> W Minimal soft. All rights reserved.</p>
-    </div>
+  <footer class="floor policy-floor">
+    <a href="./">follow the white rabbit</a>
+    <span><a class="policy-link" href="privacy.html">privacy</a><span class="copy"> · © 2026 w minimal soft inc.</span></span>
   </footer>
 
-  <!-- Interactive Filtering & Theme Script -->
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Dark / Light mode toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const sunIcon = document.getElementById('sunIcon');
-    const moonIcon = document.getElementById('moonIcon');
-    const savedTheme = localStorage.getItem('wminimal-theme');
-
-    if (savedTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      sunIcon.style.display = 'block';
-      moonIcon.style.display = 'none';
-    }
-
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('wminimal-theme', 'light');
-        sunIcon.style.display = 'none';
-        moonIcon.style.display = 'block';
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('wminimal-theme', 'dark');
-        sunIcon.style.display = 'block';
-        moonIcon.style.display = 'none';
-      }
-    });
-
-    // Category filter & search
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const searchInput = document.getElementById('searchInput');
+    const pills = document.querySelectorAll('.filter-pill');
     const cards = document.querySelectorAll('.app-card');
-    const emptyState = document.getElementById('emptyState');
-    let currentFilter = 'all';
 
-    function filterCards() {
-      const query = searchInput.value.trim().toLowerCase();
-      let visibleCount = 0;
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.getAttribute('data-filter');
 
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        const text = card.textContent.toLowerCase();
-        const matchesCategory = currentFilter === 'all' || category === currentFilter;
-        const matchesSearch = !query || text.includes(query);
-
-        if (matchesCategory && matchesSearch) {
-          card.style.display = 'flex';
-          visibleCount++;
-        } else {
-          card.style.display = 'none';
-        }
-      });
-
-      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
-    }
-
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentFilter = btn.getAttribute('data-filter');
-        filterCards();
+        cards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
-
-    searchInput.addEventListener('input', filterCards);
   </script>
 </body>
 </html>
